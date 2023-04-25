@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using STI.DAT.Entities;
+using STI.DAT.DataAccess.Entities;
 
-namespace STI.DAT.Data
+namespace STI.DAT.DataAccess
 {
     public class StudentDbContext : DbContext
     {
@@ -11,5 +11,7 @@ namespace STI.DAT.Data
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

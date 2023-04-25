@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace STI.DAT.Entities
+namespace STI.DAT.DataAccess.Entities
 {
     public class Category
     {
