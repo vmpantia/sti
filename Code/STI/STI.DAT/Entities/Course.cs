@@ -2,9 +2,10 @@
 
 namespace STI.DAT.Entities
 {
-    public class Subject
+    public class Course
     {
-        //Subject Details
+        //Course Details
+        [Key]
         public Guid InternalID { get; set; }
 
         [Required, MaxLength(10)]
@@ -13,12 +14,7 @@ namespace STI.DAT.Entities
         [Required, MaxLength(30)]
         public string Name { get; set; }
 
-        [MaxLength(100)]
-        public string Description { get; set; } = string.Empty;
-
-        public int Unit { get; set; }
-
-        public int Type { get; set; }
+        public int TotalUnit { get; set; }
 
         //Category Details
         public Guid Category_InternalID { get; set; }
