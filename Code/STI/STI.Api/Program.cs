@@ -2,6 +2,7 @@ using STI.DAT.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using STI.DAT.Contractors;
 using STI.DAT;
+using STI.DAT.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<StudentDbContext>(option => 
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddControllers();

@@ -5,6 +5,7 @@ namespace STI.DAT.DataAccess.Entities
     public class Subject
     {
         //Subject Details
+        [Key]
         public Guid InternalID { get; set; }
 
         [Required, MaxLength(10)]
