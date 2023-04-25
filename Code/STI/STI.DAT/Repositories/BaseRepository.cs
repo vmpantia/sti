@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using STI.Common.Constants;
 using STI.DAT.Contractors;
+using STI.DAT.CustomExceptions;
 using STI.DAT.DataAccess;
 
 namespace STI.DAT.Repositories
@@ -19,12 +21,12 @@ namespace STI.DAT.Repositories
         public async Task<int> CountByConditionAsync(Func<T, bool> condition) => _table.Where(condition).Count();
 
         public async Task<IEnumerable<T>> GetAllAsync() => await _table.ToListAsync();
-        public async Task<IEnumerable<T>> GetByConditionAsync<TKey>(Func<T, bool> condition) => _table.Where(condition);
+        public async Task<IEnumerable<T>> GetByConditionAsync(Func<T, bool> condition) => _table.Where(condition);
         public async Task<T> GetByIDAsync(object id)
         {
             var result = await _table.FindAsync(id);
             if (result == null)
-                throw new Exception();
+                throw new RepositoryException(string.Format(Error.ERROR_ID_NOT_FOUND, id));
 
             return result;
         }

@@ -1,4 +1,6 @@
-﻿using STI.DAT.Contractors;
+﻿using STI.Common.Constants;
+using STI.DAT.Contractors;
+using STI.DAT.CustomExceptions;
 using STI.DAT.DataAccess;
 using STI.DAT.DataAccess.Entities;
 using STI.DAT.Repositories;
@@ -60,7 +62,7 @@ namespace STI.DAT
             var result = await _db.SaveChangesAsync();
 
             if (result == 0)
-                throw new Exception();
+                throw new UnitOfWorkException(Error.ERROR_SAVING);
         }
         public void Dispose()
         {
