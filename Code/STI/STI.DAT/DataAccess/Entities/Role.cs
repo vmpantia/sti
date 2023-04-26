@@ -13,11 +13,13 @@ namespace STI.DAT.DataAccess.Entities
 
         public int Permissions { get; set; }
 
+
         //Common Details
         public int Status { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
+
     }
 }

@@ -16,8 +16,11 @@ namespace STI.DAT.DataAccess.Entities
 
         public int TotalUnit { get; set; }
 
+
         //Category Details
         public Guid Category_InternalID { get; set; }
+        public virtual Category Category { get; set; }
+
 
         //Common Details
         public int Status { get; set; }
@@ -26,6 +29,5 @@ namespace STI.DAT.DataAccess.Entities
 
         public DateTime ModifiedDate { get; set; }
 
-        public virtual Category Category { get; set; }
     }
 }

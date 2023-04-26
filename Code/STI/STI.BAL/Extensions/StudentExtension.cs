@@ -11,7 +11,7 @@ namespace STI.BAL.Extensions
             var studentDTO = new StudentDTO();
             studentDTO.Transfer(student);
             studentDTO.TypeDescription = "";
-            studentDTO.StatusDescripton = "";
+            studentDTO.StatusDescription = "";
             return studentDTO;
         }
     }

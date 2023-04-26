@@ -14,8 +14,13 @@ namespace STI.DAT.DataAccess.Entities
         [Required, MaxLength(255)]
         public string Password { get; set; }
 
+        public int Type { get; set; }
+
+
         //Role Details
         public Guid Role_InternalID { get; set; }
+        public virtual Role Role { get; set; }
+
 
         //Common Details
         public int Status { get; set; }
@@ -23,8 +28,6 @@ namespace STI.DAT.DataAccess.Entities
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
-
-        public virtual Role Role { get; set; }
 
     }
 }

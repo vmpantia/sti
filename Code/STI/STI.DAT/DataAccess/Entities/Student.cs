@@ -62,6 +62,12 @@ namespace STI.DAT.DataAccess.Entities
         [MaxLength(100)]
         public string ProvincialAddress { get; set; }
 
+
+        //User Details
+        public Guid? User_InternalID { get; set; }
+        public virtual User? User { get; set; }
+
+
         //Common Details
         public int Status { get; set; }
 

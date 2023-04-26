@@ -16,11 +16,13 @@ namespace STI.DAT.DataAccess.Entities
 
         public int Type { get; set; }
 
+
         //Common Details
         public int Status { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
         public DateTime ModifiedDate { get; set; }
+
     }
 }

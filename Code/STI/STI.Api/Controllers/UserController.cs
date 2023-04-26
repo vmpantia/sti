@@ -39,11 +39,12 @@ namespace STI.Api.Controllers
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Username),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Surname, user.LastName),
-                new Claim(ClaimTypes.GivenName, user.FirstName),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Actor, user.InternalID.ToString()),
+                new Claim(ClaimTypes.Name, user.Username),
+                //new Claim(ClaimTypes.Email, user.Email),
+                //new Claim(ClaimTypes.GivenName, user.FirstName),
+                //new Claim(ClaimTypes.Surname, user.LastName),
+                new Claim(ClaimTypes.Role, user.Role.Name)
             };
 
             var token = new JwtSecurityToken(

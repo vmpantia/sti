@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using STI.DAT.DataAccess.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace STI.BAL.Models.DTOs
 {
     public class StudentDTO
     {
         //Student Details
+        [Key]
         public Guid InternalID { get; set; }
 
         [Required, MaxLength(15)]
@@ -12,6 +14,7 @@ namespace STI.BAL.Models.DTOs
 
         public int Type { get; set; }
         public string TypeDescription { get; set; } = string.Empty;
+
 
         //Personal Details
         [Required, MaxLength(40)]
@@ -61,12 +64,19 @@ namespace STI.BAL.Models.DTOs
         [MaxLength(100)]
         public string ProvincialAddress { get; set; }
 
+
+        //User Details
+        public Guid? User_InternalID { get; set; }
+        public virtual User? User { get; set; }
+
+
         //Common Details
         public int Status { get; set; }
-        public string StatusDescripton { get; set; }
+        public string StatusDescription { get; set; } = string.Empty;
 
         public DateTime CreatedDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
+
     }
 }
