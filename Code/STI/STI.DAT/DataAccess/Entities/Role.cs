@@ -2,19 +2,16 @@
 
 namespace STI.DAT.DataAccess.Entities
 {
-    public class Category
+    public class Role
     {
-        //Category Details
+        //Role Details
         [Key]
         public Guid InternalID { get; set; }
 
-        [Required, MaxLength(20)]
+        [Required, MaxLength(15)]
         public string Name { get; set; }
 
-        [MaxLength(100)]
-        public string Description { get; set; } = string.Empty;
-
-        public int Type { get; set; }
+        public int Permissions { get; set; }
 
         //Common Details
         public int Status { get; set; }
