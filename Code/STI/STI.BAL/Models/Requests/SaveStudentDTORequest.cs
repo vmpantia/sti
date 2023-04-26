@@ -1,4 +1,6 @@
-﻿namespace STI.BAL.Models.Requests
+﻿using STI.BAL.Models.DTOs;
+
+namespace STI.BAL.Models.Requests
 {
     public class SaveStudentDTORequest : BaseRequest
     {

@@ -1,4 +1,4 @@
-﻿using STI.BAL.Models;
+﻿using STI.BAL.Models.DTOs;
 
 namespace STI.Api.Stubs
 {

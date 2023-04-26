@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using STI.Api.Stubs;
+using STI.BAL.Models.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using STI.Api.Stubs;
-using STI.BAL.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -12,19 +11,18 @@ namespace STI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private IConfiguration _config;
-
-        public LoginController(IConfiguration config)
+        private readonly IConfiguration _config;
+        public UserController(IConfiguration config)
         {
             _config = config;
         }
 
-
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> LoginAsync(UserLoginDTO request)
+        [Route("Login")]
+        public IActionResult LoginAsync(UserLoginDTO request)
         {
             var user = Authenticate(request);
 

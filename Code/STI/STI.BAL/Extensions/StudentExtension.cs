@@ -1,4 +1,4 @@
-﻿using STI.BAL.Models;
+﻿using STI.BAL.Models.DTOs;
 using STI.Common.Extensions;
 using STI.DAT.DataAccess.Entities;
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace STI.BAL.Models
+namespace STI.BAL.Models.DTOs
 {
     public class StudentDTO
     {

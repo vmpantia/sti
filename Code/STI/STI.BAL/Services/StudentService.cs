@@ -1,5 +1,5 @@
 ﻿using STI.BAL.Extensions;
-using STI.BAL.Models;
+using STI.BAL.Models.DTOs;
 using STI.BAL.Models.Requests;
 using STI.Common.Extensions;
 using STI.DAT.Contractors;

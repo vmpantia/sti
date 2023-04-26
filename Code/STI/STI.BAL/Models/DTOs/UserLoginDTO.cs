@@ -1,4 +1,4 @@
-﻿namespace STI.BAL.Models
+﻿namespace STI.BAL.Models.DTOs
 {
     public class UserLoginDTO
     {
