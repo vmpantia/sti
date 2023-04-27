@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STI.Common", "STI.Common\ST
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STI.BAL", "STI.BAL\STI.BAL.csproj", "{94E4126B-A038-4B04-984A-5CEE7FE1A906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STI.Api", "STI.Api\STI.Api.csproj", "{BD1E2E61-8A71-4ECF-A12C-4F00755C26E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STI.Api", "STI.Api\STI.Api.csproj", "{BD1E2E61-8A71-4ECF-A12C-4F00755C26E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STI.Web", "STI.Web\STI.Web.csproj", "{07B9BF68-D48B-4E70-AFB8-5BC67FBF646C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BD1E2E61-8A71-4ECF-A12C-4F00755C26E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD1E2E61-8A71-4ECF-A12C-4F00755C26E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD1E2E61-8A71-4ECF-A12C-4F00755C26E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B9BF68-D48B-4E70-AFB8-5BC67FBF646C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B9BF68-D48B-4E70-AFB8-5BC67FBF646C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B9BF68-D48B-4E70-AFB8-5BC67FBF646C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B9BF68-D48B-4E70-AFB8-5BC67FBF646C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
