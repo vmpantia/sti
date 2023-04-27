@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STI - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/STI.Web.styles.css" asp-append-version="true" />
 </head>
@@ -15,8 +16,18 @@
     <div class="cstm-container">
         <nav>
             <ul class="cstm-sidebar">
-                <li><a asp-area="" asp-controller="Student" asp-action="">Dashboard</a></li>
-                <li><a asp-area="" asp-controller="Student" asp-action="">Student</a></li>
+                <li>
+                    <a asp-area="" asp-controller="Student" asp-action="">
+                        <i class="bi bi-speedometer"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Student" asp-action="">
+                        <i class="bi bi-people"></i>
+                        Students
+                    </a>
+                </li>
             </ul>
         </nav>
         <main role="main">
