@@ -1,7 +1,6 @@
 header{
     height: 60px;
     border-bottom: 1px solid gainsboro;
-    margin-bottom: 5px;
 }
 nav {
     width: 300px;
@@ -13,6 +12,7 @@ main {
 
 .cstm-container {
     display:inline-flex;
+    width: 100%;
 }
 .cstm-sidebar {
     list-style: none;
@@ -50,3 +50,16 @@ main {
     font-size: 12px;
 }
 
+
+.cstm-table {
+    width: 100%;
+    font-size: 14px;
+}
+.cstm-table th {
+    border-bottom: 1px solid dimgray;
+    padding: 10px 5px;
+}
+.cstm-table td {
+    border-bottom: 1px solid gainsboro;
+    padding: 7px 5px;
+}
