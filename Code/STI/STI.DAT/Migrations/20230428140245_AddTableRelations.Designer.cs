@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using STI.DAT.DataAccess;
 
@@ -11,9 +12,11 @@ using STI.DAT.DataAccess;
 namespace STI.DAT.Migrations
 {
     [DbContext(typeof(StudentDbContext))]
-    partial class StudentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230428140245_AddTableRelations")]
+    partial class AddTableRelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,6 +65,9 @@ namespace STI.DAT.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CategoryInternalID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Category_InternalID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -215,6 +221,9 @@ namespace STI.DAT.Migrations
                     b.Property<Guid?>("UserInternalID")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("User_InternalID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("InternalID");
 
                     b.HasIndex("UserInternalID");
@@ -229,6 +238,9 @@ namespace STI.DAT.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CategoryInternalID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Category_InternalID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -286,6 +298,9 @@ namespace STI.DAT.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<Guid>("RoleInternalID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Role_InternalID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Status")

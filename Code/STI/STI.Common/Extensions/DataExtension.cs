@@ -7,16 +7,12 @@
             if (to == null || from == null)
                 return;
 
-            var toProperties = to.GetType().GetProperties();
             var fromProperties = from.GetType().GetProperties();
-
-            if (toProperties == null || fromProperties == null)
-                return;
-
             foreach (var prop in fromProperties)
             {
-                if (toProperties.ToList().Exists(data => data.Name == prop.Name))
-                    prop.SetValue(to, prop.GetValue(from));
+                var property = to.GetType().GetProperty(prop.Name);
+                if(property != null)
+                    property.SetValue(to, prop.GetValue(from));
 
                 continue;
             }

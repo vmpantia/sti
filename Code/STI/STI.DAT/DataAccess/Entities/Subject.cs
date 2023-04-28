@@ -23,7 +23,6 @@ namespace STI.DAT.DataAccess.Entities
 
 
         //Category Details
-        public Guid Category_InternalID { get; set; }
         public virtual Category Category { get; set; }
 
 

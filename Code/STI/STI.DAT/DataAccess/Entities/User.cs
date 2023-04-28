@@ -18,7 +18,6 @@ namespace STI.DAT.DataAccess.Entities
 
 
         //Role Details
-        public Guid Role_InternalID { get; set; }
         public virtual Role Role { get; set; }
 
 

@@ -64,7 +64,6 @@ namespace STI.DAT.DataAccess.Entities
 
 
         //User Details
-        public Guid? User_InternalID { get; set; }
         public virtual User? User { get; set; }
 
 

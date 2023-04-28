@@ -1,4 +1,5 @@
-﻿using STI.BAL.Extensions;
+﻿using STI.BAL.Contractors;
+using STI.BAL.Extensions;
 using STI.BAL.Models.DTOs;
 using STI.BAL.Models.Requests;
 using STI.Common.Extensions;
@@ -7,12 +8,12 @@ using STI.DAT.DataAccess.Entities;
 
 namespace STI.BAL.Services
 {
-    public class StudentService
+    public class StudentService : IStudentService
     {
         private readonly IUnitOfWork _uow;
         public StudentService(IUnitOfWork uow) => _uow = uow;
 
-        public async Task<int> CountStudentsAsync() 
+        public async Task<int> CountStudentsAsync()
             => await _uow.StudentRepository.CountAllAsync();
 
         public async Task<List<StudentDTO>> GetStudentsAsync()

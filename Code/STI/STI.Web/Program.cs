@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using STI.DAT.Contractors;
 using STI.DAT.DataAccess;
 using STI.DAT;
+using STI.BAL.Contractors;
+using STI.BAL.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 
 builder.Services.AddDbContext<StudentDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
