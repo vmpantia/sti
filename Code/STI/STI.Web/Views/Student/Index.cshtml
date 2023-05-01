@@ -14,6 +14,37 @@
     </div>
 </div>
 
+<button type="button" class="btn btn-primary btn-sm me-2">
+    <i class="bi bi-person-plus-fill"></i> &nbsp;
+    Add Student
+</button>
+
+<div id="actionButtons" class="btn-group btn-group-sm" role="group" style="display:none;">
+    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <span id="actionSelected">Action</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" href="#">
+                <i class="bi bi-arrow-up"></i> &nbsp;
+                Enable
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#">
+                <i class="bi bi-arrow-down"></i> &nbsp;
+                Disable
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#">
+                <i class="bi bi-trash3"></i> &nbsp;
+                Delete
+            </a>
+        </li>
+    </ul>
+</div>
+
 <table class="cstm-table">
     <thead>
         <tr>
@@ -52,8 +83,47 @@
                 <td>@student.CreatedDate.ToString("yyyy-MM-dd")</td>
                 <td>@student.ModifiedDate?.ToString("yyyy-MM-dd")</td>
                 <td class="text-center">
-                    <button>View</button>
-                    <button>Delete</button>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots"></i> &nbsp;
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item @(student.Status != Status.DELETION_INT ? "" : "disabled")" href="#">
+                                    <i class="bi bi-binoculars"></i> &nbsp;
+                                    View
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item @(student.Status == Status.ENABLED_INT ? "" : "disabled")" href="#">
+                                    <i class="bi bi-pencil"></i> &nbsp;
+                                    Edit
+                                </a>
+                            </li>
+                            <li>
+                                @if(student.Status == Status.ENABLED_INT)
+                                {
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-arrow-down"></i> &nbsp;
+                                        Disable
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-arrow-up"></i> &nbsp;
+                                        Enable
+                                    </a>
+                                }
+                            </li>
+                            <li>
+                                <a class="dropdown-item @(student.Status != Status.DELETION_INT ? "" : "disabled")" href="#">
+                                    <i class="bi bi-trash3"></i> &nbsp;
+                                    Delete
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </td>
             </tr>
         }
@@ -70,6 +140,7 @@
             studentIDs.splice(idx, 1);
         else
             studentIDs.push(input.id);
+        ActionStateChanged();
     }
 
     function SelectAllStudent(input) {
@@ -81,5 +152,21 @@
             if(input.checked) 
                 studentIDs.push(data.id);
         })
+        ActionStateChanged();
     }
+
+    function ActionStateChanged(){
+        let span = document.getElementById("actionSelected");
+        let button = document.getElementById("actionButtons");
+
+        if(studentIDs.length > 0) {
+            span.innerText = "Action for " + studentIDs.length;
+            button.style.display = "";
+        }
+        else {
+            span.innerText = "Action";
+            button.style.display = "none";
+        }
+    }
+
 </script>
