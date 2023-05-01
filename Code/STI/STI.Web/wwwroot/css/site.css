@@ -50,7 +50,6 @@ main {
     font-size: 12px;
 }
 
-
 .cstm-table {
     width: 100%;
     font-size: 14px;
@@ -62,4 +61,33 @@ main {
 .cstm-table td {
     border-bottom: 1px solid gainsboro;
     padding: 7px 5px;
+}
+
+.cstm-badge {
+    padding: 2px 5px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.status-0 {
+    background-color: #27ae60;
+    color: white;
+}
+.status-1 {
+    background-color: #c0392b;
+    color: white;
+}
+.status-2 {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+.type-0 {
+    background-color: #2980b9;
+    color: white;
+}
+.type-1 {
+    background-color: #2c3e50;
+    color: white;
 }

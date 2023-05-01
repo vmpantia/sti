@@ -17,12 +17,13 @@
 <table class="cstm-table">
     <thead>
         <tr>
-            <th class="text-center"><input type="checkbox" class="form-check-input" id="cb_all" /></th>
+            <th class="text-center"><input type="checkbox" class="form-check-input" id="cb_all" onchange="SelectAllStudent(this)" /></th>
             <th>ID</th>
             <th>Name</th>
             <th>Contact No.</th>
             <th>Email Address</th>
-            <th>Status</th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Status</th>
             <th>Created Date</th>
             <th>Modified Date</th>
             <th class="text-center">Action</th>
@@ -31,12 +32,23 @@
     <tbody>
         @foreach(var student in Model.studentList) {
             <tr>
-                <td class="text-center"><input type="checkbox" class="form-check-input" id="cb_@student.ID" /></td>
+                <td class="text-center">
+                    <input type="checkbox" class="form-check-input" id="@student.InternalID" name="studentSelection" onchange="SelectStudentByID(this)" />
+                    </td>
                 <td>@student.ID</td>
                 <td>@student.FirstName + @student.LastName</td>
                 <td>@student.PersonalContactNo</td>
                 <td>@student.PersonalEmailAddress</td>
-                <td>@student.StatusDescription</td>
+                <td class="text-center">
+                    <span class="cstm-badge type-@student.Type">
+                        @student.TypeDescription
+                    </span>
+                </td>
+                <td class="text-center">
+                    <span class="cstm-badge status-@student.Status">
+                        @student.StatusDescription
+                    </span>
+                </td>
                 <td>@student.CreatedDate.ToString("yyyy-MM-dd")</td>
                 <td>@student.ModifiedDate?.ToString("yyyy-MM-dd")</td>
                 <td class="text-center">
@@ -47,3 +59,27 @@
         }
     </tbody>
 </table>
+
+<script>
+    var studentIDs = [];
+
+    function SelectStudentByID(input){
+        let idx = studentIDs.indexOf(input.id);
+
+        if(idx > -1)
+            studentIDs.splice(idx, 1);
+        else
+            studentIDs.push(input.id);
+    }
+
+    function SelectAllStudent(input) {
+        let checkboxes = document.getElementsByName("studentSelection");
+        studentIDs = [];
+
+        checkboxes.forEach(data => {
+            data.checked = input.checked;
+            if(input.checked) 
+                studentIDs.push(data.id);
+        })
+    }
+</script>

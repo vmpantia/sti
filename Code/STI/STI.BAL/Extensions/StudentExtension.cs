@@ -12,7 +12,7 @@ namespace STI.BAL.Extensions
             var studentDTO = new StudentDTO();
             studentDTO.Transfer(student);
             studentDTO.TypeDescription = Parser.ParseType(student.Type);
-            studentDTO.StatusDescription = Parser.ParseStatus(student.Type);
+            studentDTO.StatusDescription = Parser.ParseStatus(student.Status);
             return studentDTO;
         }
     }
