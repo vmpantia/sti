@@ -13,3 +13,93 @@
         In this page you can see all the information of student stored in database.
     </div>
 </div>
+
+<div class="container">
+    <form>
+
+        <div class="cstm-detail-header">
+            <i class="bi bi-file-person me-2"></i>
+            Personal Details
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-4 mb-3">
+                    @Html.LabelFor(m => m.inputStudent.FirstName, new { @class = "form-label" }) *
+                    @Html.TextBoxFor(m => m.inputStudent.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="col-12 col-lg-4 mb-3">
+                    @Html.LabelFor(m => m.inputStudent.MiddleName, new { @class = "form-label" }) 
+                    @Html.TextBoxFor(m => m.inputStudent.MiddleName, new { @class = "form-control" })
+            </div>        
+            <div class="col-12 col-lg-4 mb-3">
+                    @Html.LabelFor(m => m.inputStudent.LastName, new { @class = "form-label" }) *
+                    @Html.TextBoxFor(m => m.inputStudent.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-4 mb-3">
+                @Html.LabelFor(m => m.inputStudent.Gender, new { @class = "form-label" }) *
+                @Html.DropDownListFor(m => m.inputStudent.Gender, 
+                                        new List<SelectListItem>{
+                                            new SelectListItem("Male", "0"),
+                                            new SelectListItem("Female", "1")}, 
+                                        "Select Gender", 
+                                        new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="cstm-detail-header">
+            <i class="bi bi-telephone me-2"></i>
+            Contact Details
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-4 mb-3">
+                @Html.LabelFor(m => m.inputStudent.PersonalContactNo, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.PersonalContactNo, new { @class = "form-control" })
+            </div>
+            <div class="col-12 col-lg-4 mb-3">
+                @Html.LabelFor(m => m.inputStudent.PersonalEmailAddress, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.PersonalEmailAddress, new { @class = "form-control" })
+            </div>   
+        </div>
+
+        <div class="cstm-detail-header">
+            <i class="bi bi-hospital me-2"></i>
+            Incase of Emergency Details
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-3 mb-3">
+                @Html.LabelFor(m => m.inputStudent.ICOEFullName, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.ICOEFullName, new { @class = "form-control" })
+            </div>
+            <div class="col-12 col-lg-3 mb-3">
+                @Html.LabelFor(m => m.inputStudent.ICOEContactNo, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.ICOEContactNo, new { @class = "form-control" })
+            </div>
+            <div class="col-12 col-lg-3 mb-3">
+                @Html.LabelFor(m => m.inputStudent.ICOEAddress, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.ICOEAddress, new { @class = "form-control" })
+            </div>
+            <div class="col-12 col-lg-3 mb-3">
+                @Html.LabelFor(m => m.inputStudent.ICOEReletion, new { @class = "form-label" }) *
+                @Html.TextBoxFor(m => m.inputStudent.ICOEReletion, new { @class = "form-control" })
+            </div>   
+        </div>
+
+
+        <div class="cstm-detail-header">
+            <i class="bi bi-geo-alt me-2"></i>
+            Location Details
+        </div>
+
+        <div class="cstm-detail-header">
+            <i class="bi bi-info-square me-2"></i>
+            Other Details
+        </div>
+
+        @*@Html.ValidationMessageFor(m => m.inputStudent.ID, new { @class = "form-control" })*@
+    </form>
+</div>

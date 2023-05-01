@@ -1,4 +1,5 @@
 ﻿using STI.DAT.DataAccess.Entities;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace STI.BAL.Models.DTOs
@@ -9,7 +10,7 @@ namespace STI.BAL.Models.DTOs
         [Key]
         public Guid InternalID { get; set; }
 
-        [Required, MaxLength(15)]
+        [Required, MaxLength(15), DisplayName("Student ID")]
         public string ID { get; set; }
 
         public int Type { get; set; }
@@ -17,13 +18,13 @@ namespace STI.BAL.Models.DTOs
 
 
         //Personal Details
-        [Required, MaxLength(40)]
+        [Required, MaxLength(40), DisplayName("First Name")]
         public string FirstName { get; set; }
 
-        [MaxLength(40)]
+        [MaxLength(40), DisplayName("Middle Name")]
         public string MiddleName { get; set; } = string.Empty;
 
-        [Required, MaxLength(40)]
+        [Required, MaxLength(40), DisplayName("Last Name")]
         public string LastName { get; set; }
 
         [Required, MaxLength(6)]
@@ -33,24 +34,24 @@ namespace STI.BAL.Models.DTOs
 
 
         //Contact Details (Personal)
-        [Required, MaxLength(15)]
+        [Required, MaxLength(15), DisplayName("Contact No.")]
         public string PersonalContactNo { get; set; }
 
-        [Required, MaxLength(50)]
+        [Required, MaxLength(50), DisplayName("Email Address")]
         public string PersonalEmailAddress { get; set; }
 
 
         //Contact Details (In case of emergency)
-        [Required, MaxLength(120)]
+        [Required, MaxLength(120), DisplayName("Full Name")]
         public string ICOEFullName { get; set; }
 
-        [Required, MaxLength(15)]
+        [Required, MaxLength(15), DisplayName("Contact No.")]
         public string ICOEContactNo { get; set; }
 
-        [Required, MaxLength(100)]
+        [Required, MaxLength(100), DisplayName("Address")]
         public string ICOEAddress { get; set; }
 
-        [Required, MaxLength(100)]
+        [Required, MaxLength(100), DisplayName("Relation")]
         public string ICOEReletion { get; set; }
 
 
